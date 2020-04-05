@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tic-tac-toe-application"
+    }
+  },
+  "defaultProject": "tic-tac-toe-application",
+  "cli": {
+    "analytics": false
+  }
 }
