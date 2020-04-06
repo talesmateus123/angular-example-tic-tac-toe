@@ -1,1 +1,84 @@
-<p>tic-tac-toe works!</p>
+<div>
+    <h2>Tic Tac Toe</h2>
+
+    <!-- Start screen -->
+    <div *ngIf="displayStartScreen" class="main">
+      <a (click)="startGame()" class="button"> Start game </a>
+    </div>
+    <!-- Start screen ends -->
+  
+    <!-- Game board -->
+    <div *ngIf="displayGameBoardScreen">
+      <ul>
+        <li class="kz-border-bottom kz-border-right" 
+            [class.kz-img-x]="displayX(0, 0)"
+            [class.kz-img-o]="displayO(0, 0)"
+            [class.kz-victory-color]="displayVictoryScreen(0, 0)"
+            (click)="play(0, 0)">
+        </li>
+        <li class="kz-border-bottom kz-border-right"
+            [class.kz-img-x]="displayX(0, 1)"
+            [class.kz-img-o]="displayO(0, 1)"
+            [class.kz-victory-color]="displayVictoryScreen(0, 1)"
+            (click)="play(0, 1)">
+        </li>
+        <li class="kz-border-bottom"
+            [class.kz-img-x]="displayX(0, 2)"
+            [class.kz-img-o]="displayO(0, 2)"
+            [class.kz-victory-color]="displayVictoryScreen(0, 2)"
+            (click)="play(0, 2)">
+        </li>
+        <li class="kz-border-bottom kz-border-right"
+            [class.kz-img-x]="displayX(1, 0)"
+            [class.kz-img-o]="displayO(1, 0)"
+            [class.kz-victory-color]="displayVictoryScreen(1, 0)"
+            (click)="play(1, 0)">
+        </li>
+        <li class="kz-border-bottom kz-border-right"
+            [class.kz-img-x]="displayX(1, 1)"
+            [class.kz-img-o]="displayO(1, 1)"
+            [class.kz-victory-color]="displayVictoryScreen(1, 1)"
+            (click)="play(1, 1)">
+        </li>
+        <li class="kz-border-bottom"
+            [class.kz-img-x]="displayX(1, 2)"
+            [class.kz-img-o]="displayO(1, 2)"
+            [class.kz-victory-color]="displayVictoryScreen(1, 2)"
+            (click)="play(1, 2)">
+        </li>
+        <li class="kz-border-right"
+            [class.kz-img-x]="displayX(2, 0)"
+            [class.kz-img-o]="displayO(2, 0)"
+            [class.kz-victory-color]="displayVictoryScreen(2, 0)"
+            (click)="play(2, 0)">
+        </li>
+        <li class="kz-border-right"
+            [class.kz-img-x]="displayX(2, 1)"
+            [class.kz-img-o]="displayO(2, 1)"
+            [class.kz-victory-color]="displayVictoryScreen(2, 1)"
+            (click)="play(2, 1)">
+        </li>
+        <li
+            [class.kz-img-x]="displayX(2, 2)"
+            [class.kz-img-o]="displayO(2, 2)"
+            [class.kz-victory-color]="displayVictoryScreen(2, 2)"
+            (click)="play(2, 2)">
+        </li>
+      </ul>
+    </div>
+    <!-- Game board ends --> 
+  
+    <!-- Final screen -->
+    <div *ngIf="displayFinalScreen">
+      <span>
+      <p *ngIf="player===2">You win!!!</p>
+      <p *ngIf="player===1">You lose...</p>
+      <p *ngIf="player===0">The game ended in a draw...</p>
+      <br />
+      <a (click)="newGame()" class="button">Try again</a>
+      </span>
+    </div>
+    <!-- Final screen ends -->
+  
+  </div>
+  
